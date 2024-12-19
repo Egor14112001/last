@@ -14,6 +14,6 @@ for i in range(5):
         "Owner":(random.randint(0,1)),
         "Driven_run":"mid"
         }
-    response = requests.post('http://localhost:8001/api/prediction', params=params, json=data)
+    response = requests.post('http://localhost:8000/api/prediction', params=params, json=data)
     time.sleep(random.randint(1,5))
     print(response.json())

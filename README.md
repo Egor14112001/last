@@ -5,8 +5,8 @@ https://www.kaggle.com/datasets/vijayaadithyanvg/car-price-predictionused-cars?r
 # Запуск
 Для запуска проекта необходимо выполнить команды:
 ```
-git clone https://github.com/Egor14112001/IIS_Lr_1
-cd IIS_Lr_1
+git clone https://github.com/Egor14112001/LR_4_IIS.git
+cd LR_4_IIS
 установка окружения - python -m venv .venv_proj
 активация окружения - .venv_proj/scripts/Activate
 установка зависимостей - pip install -r requirements.txt
@@ -66,17 +66,17 @@ RunID финальной модели: 76998f40b5ac47809ed494edf6f68dda
 ### Команды для создания Docker-образа
 Сборка образа выполняется с помощью команды:
 ```
-docker build . --tag lr_3_model:0
+docker build . --tag car_price:0
 ```
 
 ### Команда для запуска контейнера
 Для запуска контейнера с пробросом порта и подключением модели выполните следующую команду:
 ```
-docker run -p 8001:8000 -v $(pwd)/../models:/models lr_3_model:0
+docker run -p 8001:8000 -v $(pwd)/../models:/models car_price:0
 ```
 ### Проверка работоспособности сервиса
 1. Перейдите на страницу документации FastAPI по адресу:
-   [http://localhost:8001/docs](http://localhost:8001/docs)
+   (http://localhost:8000/docs)
 
 2. Выполните запрос к эндпоинту `/api/prediction`:
    **Пример тела запроса**:
@@ -92,3 +92,8 @@ docker run -p 8001:8000 -v $(pwd)/../models:/models lr_3_model:0
 "Driven_run":"mid"
 }
 ```
+# Итоговая команда для запуска compose-проекта
+
+``` docker build . --tag car_price_model:1 ```
+
+``` docker compose up ```

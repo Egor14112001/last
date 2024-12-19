@@ -9,7 +9,7 @@ class FastAPIHandler():
         logger.warning('Loading model...')
         
         # try:
-        self.model = pkl.load(open('D:\Загрузки2\Lr3\services\ml_service\model.pkl', 'rb'))
+        self.model = pkl.load(open('../models/model.pkl', 'rb'))
         logger.info('Model is loaded')
         # except Exception as e:
         #     logger.error('Error loading model')

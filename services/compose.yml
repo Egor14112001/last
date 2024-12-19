@@ -1,8 +1,8 @@
-name: lr_4
+name: car_price
 
 services:
   price-classifier:
-    image: lr_3_model:0
+    image: car_price_model:1
     ports:
       - "8000:8000"
     volumes:
